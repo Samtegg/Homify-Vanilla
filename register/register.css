@@ -1,0 +1,115 @@
+/* General Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+
+  body {
+	font-family: 'Arial', sans-serif;
+	background-color: #434242;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	color: #fff;
+  }
+
+  .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+  }
+
+  .form-wrapper {
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 30px;
+	width: 400px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  h1 {
+	text-align: center;
+	color: #00985B;
+  }
+
+  input, select {
+	width: 100%;
+	padding: 12px;
+	margin: 8px 0;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
+  }
+
+  input:focus, select:focus {
+	border-color: #048853;
+  }
+
+  button {
+	width: 100%;
+	padding: 15px;
+	background-color: #00985B;
+	border: none;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+  }
+
+  button:hover {
+	background-color: #048853;
+  }
+
+  .message {
+	text-align: center;
+	margin-top: 20px;
+	color: #000;
+  }
+
+  .message a {
+	color: #00985B;
+	text-decoration: none;
+  }
+
+  .message a:hover {
+	text-decoration: underline;
+  }
+
+  .input-group {
+	margin-bottom: 20px;
+  }
+
+  label {
+	color: #434242;
+  }
+
+  .social-login {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+  }
+
+  .social-btn {
+	flex: 1;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+	margin: 0 5px;
+  }
+
+  .google-btn {
+	background-color: #db4437;
+	color: white;
+  }
+
+  .facebook-btn {
+	background-color: #4267B2;
+	color: white;
+  }

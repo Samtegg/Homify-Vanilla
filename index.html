@@ -3,42 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homify Landing Page</title>
+    <title>Homify - Simplifying House Hunting in Lagos</title>
     <link rel="stylesheet" href="./assets/index.css" />
+
+    <meta name="description" content="Homify is your go-to real estate platform, connecting property seekers in Lagos, Nigeria, with property owners and agents. Simplify house hunting today.">
+    <link rel="icon" type="image/x-icon" href="./assets/homi-favicon.ico">
+    <link rel="icon" type="image/png" href="./assets/homi-favicon.png">
 </head>
+
 <body>
+
     <div class="homify-container">
         <div class="homify-firstsection">
             <div class="firstsection-background">
                 <header>
-                    <nav class="homify-nav">
+                    <!-- Nav Bar -->
+                    <nav class="homify-nav" id="nav-bar">
                         <img class="logo" src="./assets/logo.png" alt="" />
                         <ul class="first-nav">
-                            <li>HOME</li>
-                            <li>SERVICES</li>
-                            <li>FEATURES</li>
-                            <li>CONTACT </li>
+                            <li><a href="#home">HOME</a></li>
+                            <li><a href="#services">SERVICES</a></li>
+                            <li><a href="#features">FEATURES</a></li>
+                            <li><a href="#contact">CONTACT</a></li>
                         </ul>
                         <ul class="second-nav">
-                            <li>REGISTER</li> 
-                            <li class="login">LOGIN</li> 
+                            <li class="reg"><a href="./register/register.html" >REGISTER</a></li> 
+                            <li class="login"><a href="./login-signup/login.html" >LOGIN</a></li> 
                         </ul>
-                    </nav>
+
+                        <div class="menu-icon" id="menu-icon">
+                            <div class="burger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="cancel-icon">✖</div>
+                        </div>
+                    </nav> 
                 </header>
-                <div class="homify-herosection">
+
+                <!-- Hero Section -->
+                <div class="homify-herosection" id="home">
                     <h1>Homify Helping to Find <br> the Dream Home.</h1>
                     <p>Homify is here to find the best house for you,<br> whether for sale or rent, with reliable sources.</p>
                     <div class="hero-buttoncontainer">
-                        <button class="hero-button">Find a House.</button>
-                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button class="hero-button"><a href="#recommendation">Find a House</a></button>
+                        <a href="#recommendation">
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.3334 34.8333C17.905 34.8342 17.4899 34.685 17.1601 34.4117C16.9744 34.2578 16.821 34.0687 16.7085 33.8554C16.596 33.6421 16.5267 33.4087 16.5046 33.1686C16.4824 32.9285 16.5079 32.6864 16.5795 32.4561C16.651 32.2258 16.7673 32.0119 16.9217 31.8267L25.1351 22L17.2151 12.155C17.0628 11.9675 16.949 11.7517 16.8804 11.5201C16.8118 11.2885 16.7896 11.0456 16.8152 10.8053C16.8407 10.5651 16.9135 10.3323 17.0293 10.1203C17.1451 9.90832 17.3017 9.72129 17.4901 9.57C17.6797 9.4031 17.9019 9.27721 18.1425 9.20023C18.3832 9.12325 18.6371 9.09685 18.8885 9.12267C19.1398 9.14849 19.3831 9.22598 19.6031 9.35029C19.823 9.47459 20.0149 9.64302 20.1667 9.845L29.0217 20.845C29.2914 21.173 29.4388 21.5845 29.4388 22.0092C29.4388 22.4338 29.2914 22.8453 29.0217 23.1733L19.8551 34.1733C19.6711 34.3952 19.4375 34.5706 19.1731 34.6853C18.9087 34.7999 18.621 34.8507 18.3334 34.8333Z" fill="white"/>
-                        </svg>  
+                            </svg>
+                        </a> 
                     </div>
                 </div>
             </div>
-            
         </div>
-        <div class="homify-services">
+        
+        <!-- Services -->
+        <div class="homify-services" id="services">
             <div class="services-header">
                 <h2>Our Services.</h2>
                 <h4>The dream home is here to be a solution for you.</h4>
@@ -67,6 +88,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Navigation-->
         <div class="homify-navigate">
             <div class="navigate-first">
                 <h2>Find Your Dream Home.</h2>
@@ -77,13 +100,15 @@
             </div>
             <div class="navigate-third">
                 <div class="navigate-options">
-                    <p>Sell</p>
-                    <p>Rent</p>
-                    <p>New Property</p>
+                    <p class="sell"><a href="#">Sell</a></p>
+                    <p class="rent"><a href="#">Rent</a></p>
+                    <p class="new-property"><a href="#">New Property</a></p>
                 </div> 
             </div>
         </div>
-        <div class="homify-recommendation">
+
+        <!-- Recommendations-->
+        <div class="homify-recommendation" id="recommendation">
             <div class="recommendation-container">
                 <h2>House Recommendations for You</h2>
                 <div class="recommendation-searchcontaiiner">
@@ -97,16 +122,14 @@
                             <p>House Type</p>
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.24995 3.90002L6.49995 7.15002L9.74995 3.90002L11.05 4.55002L6.49995 9.10002L1.94995 4.55002L3.24995 3.90002Z" fill="#00985B"/>
-                                </svg>
-                                
+                            </svg>
                         </div>
                         <div class="house-filter">
                             <img src="./assets/price-range.png" alt="house-icon" />
                             <p>Price Range</p>
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.24995 3.90002L6.49995 7.15002L9.74995 3.90002L11.05 4.55002L6.49995 9.10002L1.94995 4.55002L3.24995 3.90002Z" fill="#00985B"/>
-                                </svg>
-                                
+                            </svg>   
                         </div>
                     </div>
                 </div>
@@ -306,17 +329,18 @@
                     </div>
                 </div>
                 <div class="loadmore">
-                    
                     <p>Load More...</p>
                 </div>
             </div>
-            <div class="features-container">
+
+            <!-- House Feature -->
+            <div class="features-container" id="features">
                 <div class="features-header">
                     <h3> House Features</h3>
-                    <button>View All..</button>
+                    <button id="viewAllBtn">View All..</button>
                 </div>
                 <div class="features-image">
-                    <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class ="arrow left-arrow" width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="30.5" cy="30.5" r="30.5" fill="#00985B"/>
                         <path d="M35.8714 44.5016C36.3679 44.5025 36.849 44.3314 37.2313 44.0179C37.4465 43.8414 37.6243 43.6246 37.7547 43.3799C37.8851 43.1352 37.9654 42.8675 37.991 42.5921C38.0167 42.3167 37.9872 42.039 37.9042 41.7748C37.8213 41.5107 37.6865 41.2654 37.5075 41.0529L27.9881 29.7815L37.1676 18.4891C37.3441 18.2741 37.4759 18.0266 37.5554 17.7609C37.6349 17.4952 37.6606 17.2166 37.631 16.9411C37.6014 16.6655 37.5171 16.3985 37.3828 16.1553C37.2486 15.9122 37.0671 15.6976 36.8488 15.5241C36.629 15.3327 36.3715 15.1883 36.0926 15.1C35.8137 15.0117 35.5193 14.9814 35.228 15.011C34.9367 15.0406 34.6548 15.1295 34.3998 15.2721C34.1449 15.4147 33.9224 15.6079 33.7465 15.8395L23.4834 28.4567C23.1709 28.833 23 29.305 23 29.792C23 30.2791 23.1709 30.7511 23.4834 31.1274L34.1077 43.7445C34.3209 43.999 34.5917 44.2002 34.8981 44.3317C35.2045 44.4632 35.538 44.5214 35.8714 44.5016Z" fill="white"/>
                     </svg>
@@ -328,13 +352,15 @@
                     <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="30.5" cy="30.5" r="30.5" transform="matrix(-1 0 0 1 61 0)" fill="#00985B"/>
                         <path d="M25.1286 44.4852C24.6321 44.4862 24.151 44.315 23.7687 44.0016C23.5535 43.825 23.3757 43.6082 23.2453 43.3635C23.1149 43.1189 23.0346 42.8512 23.009 42.5758C22.9833 42.3003 23.0128 42.0226 23.0958 41.7585C23.1787 41.4943 23.3135 41.249 23.4925 41.0365L33.0119 29.7652L23.8324 18.4728C23.6559 18.2577 23.5241 18.0102 23.4446 17.7445C23.3651 17.4788 23.3394 17.2002 23.369 16.9247C23.3986 16.6492 23.4829 16.3821 23.6172 16.139C23.7514 15.8958 23.9329 15.6813 24.1512 15.5078C24.371 15.3163 24.6285 15.1719 24.9074 15.0836C25.1863 14.9953 25.4807 14.965 25.772 14.9947C26.0633 15.0243 26.3452 15.1132 26.6002 15.2557C26.8551 15.3983 27.0776 15.5915 27.2535 15.8232L37.5166 28.4404C37.8291 28.8166 38 29.2886 38 29.7757C38 30.2628 37.8291 30.7347 37.5166 31.111L26.8923 43.7282C26.6791 43.9827 26.4083 44.1838 26.1019 44.3154C25.7955 44.4469 25.462 44.5051 25.1286 44.4852Z" fill="white"/>
-                        </svg>
+                    </svg>
                         
                  
                 </div>
             </div>
         </div>
-        <div class="contact-container">
+
+        <!-- Contact Section -->
+        <div class="contact-container" id="contact">
             <div class="contact-darkbackground">
                 <div class="first-contact">
                     <h4>Need a Consultation..? Please contact us. We are Ready to Help.</h4>
@@ -342,45 +368,48 @@
                         <h5>Contact</h5>
                         <div class="contact-info">
                             <img src="./assets/address-icon.png" alt="" />
-                            <p>4th Avenue, Kasumu Street, Ikeja, Lagos</p>
+                            <a href=""><p>4th Avenue, Kasumu Street, Ikeja, Lagos</p></a>
                         </div>
                         <div class="contact-info">
                             <img src="./assets/telephone-icon.png" alt="" />
-                            <p>022-6545-2041</p>
+                            <a href=""><p>022-6545-2041</p></a>
                         </div>
                         <div class="contact-info">
                             <img src="./assets/email-icon.png" alt="" />
-                            <p>osimesimon@gmail.com</p>
+                            <a href=""><p>osimesimon@gmail.com</p></a>
                         </div>
                     </div>
                     <div class="contact-image">
-                        <img src="./assets/facebook-icon.png" />
-                        <img src="./assets/twitter-icon.png" />
-                        <img src="./assets/instagram-icon.png" />
-                        <p>Homify</p>
+                        <a href=""><img src="./assets/facebook-icon.png" /></a>
+                        <a href=""><img src="./assets/twitter-icon.png" /></a>
+                        <a href=""><img src="./assets/instagram-icon.png" /></a>
+                        <a href=""><p>Homify</p></a>
                     </div>
                 </div>
+                
                 <div class="contact-questions">
                     <h3>Any questions..?</h3>
                     <form class="contact-form">
-                        <input placeholder="Enter your email here..." />
-                        <input placeholder="Your question.." />
+                        <input type="email" placeholder="Enter your email here..." required/>
+                        <input type="text" rows="4" placeholder="Your question.." required/>
                         <button type="submit">Send</button>
                     </form>
                 </div>
             </div>
            
         </div>
+
+        <!-- Footer -->
         <div class="footer">
             <div class="first-footer">
                 <img class="logo" src="./assets/logo.png" alt="" />
-                <nav class="homify-nav">
+                <nav class="footer-nav">
                     <ul>
-                        <li>Home</li>
-                        <li>Services</li>
-                        <li>Features</li>
-                        <li>Contact</li>
-                        <li>Login</li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="./login-signup/login.html">Login</a></li>
                     </ul>
                 </nav>
             </div>
@@ -388,5 +417,7 @@
         </div>
         
     </div>
+
+    <script src="index.js"></script>
 </body>
 </html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homify User Dashboard | Find Your Dream Home in Lagos</title>
+    <meta name="description" content="Manage your Homify account, list properties, view transactions, and stay updated with the latest real estate opportunities in Lagos, Nigeria.">
+    <link rel="stylesheet" href="./userdash.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Homify User Dashboard</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="user-overview">
+            <div class="user-info">
+                <div class="user-details">
+                    <img id="profile-picture" src="/placeholder-user.jpg" alt="Profile Picture" class="profile-picture">
+                    <div>
+                        <h2 id="username">John Doe</h2>
+                        <p id="email">johndoe@example.com</p>
+                        <p>Joined: <span id="date-joined">January 1, 2023</span></p>
+                        <p>User Type: <span id="user-type">Seller (Land Owner)</span></p>
+                        <button class="change-picture-btn" onclick="changeProfilePicture()">Change Profile Picture</button>
+                    </div>
+                </div>
+                <button class="logout-btn" onclick="logout()">Sign Out</button>
+            </div>
+        </section>
+
+        <section class="notification-bar">
+            <h3>Notifications</h3>
+            <ul class="notifications" id="notifications">
+                <!-- Notifications will be populated by JavaScript -->
+            </ul>
+        </section>
+
+        <section id="seller-section" class="dashboard-section">
+            <h2>My Properties</h2>
+            <button class="upload-btn" onclick="uploadProperty()">Upload New Property</button>
+            <ul class="property-list" id="property-list">
+                <!-- Property list will be populated by JavaScript -->
+            </ul>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Transaction History</h2>
+            <ul class="transaction-list" id="transaction-list">
+                <!-- Transaction list will be populated by JavaScript -->
+            </ul>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Top Listings</h2>
+            <ul class="property-list" id="top-listings">
+                <!-- Top listings will be populated by JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="./userdash.js">
+       
+    </script>
+</body>
+</html>
