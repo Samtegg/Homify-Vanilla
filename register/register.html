@@ -5,48 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homify - Register</title>
   <link rel="stylesheet" href="./register.css">
-  <style>
-    
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <meta name="Register-page" content="Homify is your go-to real estate platform, connecting property seekers in Lagos, Nigeria, with property owners and agents. Simplify house hunting today.">
+  <link rel="icon" type="image/x-icon" href="./assets/homi-favicon.ico">
+  <link rel="icon" type="image/png" href="./assets/homi-favicon.png">
 </head>
 
 <body>
   <div class="container">
+    <div class="logo-container">
+      <a href="/index.html"><img src="/assets/logo.png" alt="Homify Logo" class="logo"></a>
+    </div>
+    <div class="content-wrapper">
+      <h2>Simplify house hunting today.</h2>
+      <p>Homify is your go-to real estate platform, connecting property seekers in Lagos, Nigeria, with property owners and agents.</p>
+    </div>
     <div class="form-wrapper">
-      <h1>Create Your Homify Account</h1>
-      <form id="registerForm">
-        <div class="input-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="input-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="input-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required>
-        </div>
-        <div class="input-group">
-          <label for="role">Role</label>
-          <select id="role" name="role">
-            <option value="buyer">Buyer</option>
-            <option value="seller">Seller (Landowner)</option>
-            <option value="agent">Agent</option>
-          </select>
-        </div>
-        <button type="submit">Register</button>
-        <div class="social-login">
-          <button type="button" class="social-btn google-btn">Register with Google</button>
-          <button type="button" class="social-btn facebook-btn">Register with Facebook</button>
-        </div>
-        <p class="message">Already have an account? <a href="signin.html">Sign In</a></p>
-      </form>
+      <div class="form-content">
+        <h1>Create Your Homify Account</h1>
+        <form id="registerForm">
+          <div class="input-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="input-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="input-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" required>
+          </div>
+          <div class="input-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="text" id="confirmPassword" name="confirmPassword" required>
+          </div>
+          <div class="input-group">
+            <label for="role">Role</label>
+            <select id="role" name="role">
+              <option value="buyer">Buyer</option>
+              <option value="seller">Seller (Landowner)</option>
+              <option value="agent">Agent</option>
+            </select>
+          </div>
+          <button type="submit">Register</button>
+          <div class="social-login">
+            <button type="button" class="social-btn google-btn">Register with Google</button>
+            <button type="button" class="social-btn facebook-btn">Register with Facebook</button>
+          </div>
+          <p class="message">Already have an account? <a href="/login-signup/login.html">Sign In</a></p>
+        </form>
+      </div>
     </div>
   </div>
 
-  <script src="./register.js">
-   
-  </script>
+  <script src="./register.js"></script>
 </body>
 </html>
