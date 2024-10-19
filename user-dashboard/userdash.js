@@ -125,6 +125,7 @@ topListings.forEach(listing => {
 function logout() {
 	// Implement logout functionality here
 	alert('Logging out...');
+	window.location.href = '../index.html';
 }
 
 function uploadProperty() {

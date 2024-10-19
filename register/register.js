@@ -10,7 +10,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
 
 	// Simulate successful registration
 	alert('Registration successful! Redirecting to dashboard...');
-	window.location.href = 'dashboard.html';
+	window.location.href = '../user-dashboard/userdash.html';
   });
 
   // Social login buttons (these would need to be connected to the respective APIs)
