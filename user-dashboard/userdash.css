@@ -8,6 +8,24 @@
 	--hover-gray: #E0E0E0;
 }
 
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
 body {
 	font-family: Arial, sans-serif;
 	margin: 0;
@@ -20,12 +38,91 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 20px;
+	margin-top: 40px;
 }
 
-header {
-	background-color: var(--primary-green);
-	color: var(--white);
-	padding: 20px 0;
+/* NAV BAR */
+
+/* ----- Header Styles----- */
+.homify-firstsection {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(112.9deg, #048853 0.98%, rgba(0, 0, 0, 0.84) 165.36%);
+}
+
+.firstsection-background {
+    background: url(./first-background.png);
+    background-position: left;
+    background-size: contain;
+    background-repeat: initial;
+}
+
+/* --- nav bar ---*/
+.homify-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(112.9deg, #048853 0.98%, rgba(0, 0, 0, 0.84) 165.36%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo{
+    height: 47px;
+    width: auto;
+}
+
+
+.second-nav{
+	display: flex;
+}
+
+
+.dash-anchor  {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: color 0.3s, transform 0.3s;
+	font-family: Poppins;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	text-align: left;
+	margin: 0 10px;
+}
+
+.dash-anchor:hover{
+    color: #0ee68f;
+    transform: translateY(-2px);
+}
+
+.reg {
+    background-color: transparent;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 2px;
+	font-family: Poppins;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	text-align: left;
+	margin: 0 10px;
+}
+.login {
+    background-color: #fff;
+    color: #00985B;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+
+.reg:hover, .login:hover {
+    /* background-color: #11d184; */
+    background-color: #f2fff3;
+    color: #00985B;
 }
 
 h1, h2 {
