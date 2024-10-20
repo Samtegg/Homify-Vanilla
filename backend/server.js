@@ -29,11 +29,16 @@ app.use(bodyParser.json());
 
 
 app.post('/api/register', async(req, res) => {
-    const bodyParams = req.body
-
-    const resut = await db.query()
-    res.json({message: 'Data received Successfully', data: bodyParams})
-    
+    try {
+        const {name, email, phone, password, role} = req.body
+        const resut = await db.query("INSERT INTO users(name, email, phone, password, role ) VALUES($1, $2, $3, $4, $5)", [name, email, phone, password, role]);
+        res.json({message: 'Data received Successfully', data: req.body})
+        
+    } catch (error) {
+        console.error('Error inserting data', error);
+        res.status(500).json({message: 'Error saving data', error: error.message})
+    }
+   
     
 })
 
