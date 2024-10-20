@@ -3,6 +3,7 @@ import axios from "axios";
 import bodyParser from "body-parser";
 import cors from "cors";
 import pg from "pg"
+import bcrypt from 'bcrypt';
 
 
 
@@ -29,16 +30,20 @@ app.use(bodyParser.json());
 
 
 app.post('/api/register', async(req, res) => {
+    const saltRounds = 10
     try {
         const {name, email, phone, password, role} = req.body
         const emailCheck = await db.query("SELECT * FROM users WHERE email = $1", [email]);
         if(emailCheck.rows.length > 0){
-            res.json({message: 'Email exist', email: email})
+            return res.json({message: 'Email exist', email: email})
         } else{
-            const resut = await db.query("INSERT INTO users(name, email, phone, password, role ) VALUES($1, $2, $3, $4, $5)", [name, email, phone, password, role]);
-            res.json({message: 'Success', data: req.body})
-        }
+            const hashedPassword = await bcrypt.hash(password, saltRounds);
 
+            const result = await db.query("INSERT INTO users(name, email, phone, password, role ) VALUES($1, $2, $3, $4, $5) RETURNING *", [name, email, phone, hashedPassword, role]);
+
+            return res.json({message: 'Success', data: result.rows[0]})
+           
+        }
        
         
     } catch (error) {
