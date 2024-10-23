@@ -1,24 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
 	// nav-bar and menu-icon
-	const menuIcon = document.getElementById('menu-icon');
-    const firstNav = document.querySelector('.first-nav');
-    const secondNav = document.querySelector('.second-nav');
 
-	menuIcon.addEventListener('click', () => {
-		firstNav.classList.toggle('active');
-		secondNav.classList.toggle('active');
-		menuIcon.classList.toggle('active');
-	});
+document.addEventListener('DOMContentLoaded', function() {
 
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.first-nav a, .second-nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            firstNav.classList.remove('active');
-            secondNav.classList.remove('active');
-            menuIcon.classList.remove('active');
-        });
-    });
+const toggleButton = document.getElementsByClassName('toggle-button')[0];
+const firstNav = document.getElementsByClassName('first-nav')[0];
+const secondNav = document.getElementsByClassName('second-nav')[0];
+
+toggleButton.addEventListener('click', () => {
+    firstNav.classList.toggle('active');
+    secondNav.classList.toggle('active');
+});
 
 
     // Smooth scrolling for navigation links

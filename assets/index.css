@@ -114,29 +114,23 @@ margin: 0 10px;
 
 
 
-.menu-icon {
-    display: none;
-    cursor: pointer;
+.toggle-button {
+	position: absolute;
+	top: .75rem;
+	right: 1rem;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 31px;
+	height: 21px;
 }
 
-.burger-icon span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px 0;
+.toggle-button .bar {
+	height: 3px;
+	width: 100%;
+	background-color: white;
+	border-radius: 10px;
 }
-
-.cancel-icon {
-    display: none;
-    font-size: 24px;
-    color: #fff;
-}
-
-
-
-
-
 
 
 
@@ -146,8 +140,6 @@ margin: 0 10px;
     transform: scale(1.1);
     transition: transform 0.2s;
 }
-
-
 
 
 
@@ -773,40 +765,42 @@ text-align: left;
 @media screen and (min-width: 320px) and (max-width: 768px), 
 screen and (max-width: 768px) and (orientation: landscape) {
 
-    .first-nav, .second-nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background: linear-gradient(112.9deg, #048853 0.98%, rgba(0, 0, 0, 0.84) 165.36%);
+    .homify-nav{
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: right 0.5s ease-in-out;;
-        z-index: 999;
+		align-items: flex-start;
     }
 
-    .first-nav.active, .second-nav.active {
-        right: 0;
+    .homify-nav{
+        flex-direction: column;
+		align-items: flex-start;
     }
 
-    .first-nav li, .second-nav li {
-        margin: 20px 0;
-    }
-
-    .menu-icon {
-        display: block;
-        position: relative;
+    .toggle-button {
+        display: flex;
+        order: 2;
         z-index: 1001;
     }
 
-    .menu-icon.active .burger-icon {
+    .first-nav, .second-nav {
         display: none;
+		width: 100%;
     }
 
-    .menu-icon.active .cancel-icon {
-        display: none;
+    .first-nav ul, .second-nav ul {
+        width: 100%;
+		flex-direction: column;
+    }
+
+    .first-nav li, .second-nav li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .first-nav.active, .second-nav.active {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
     }
 
 

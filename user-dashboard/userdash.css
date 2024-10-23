@@ -139,6 +139,12 @@ h1, h2 {
 	margin: 0;
 }
 
+.toggle-button {
+    display: none;
+}
+
+
+
 .user-overview {
 	background-color: var(--white);
 	border-radius: 8px;
@@ -469,4 +475,50 @@ margin: 50px 0;
 .loadmore > p:hover {
     color: #00985B;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    .second-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--dark-green);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px;
+    }
+
+    .second-nav.active {
+        display: flex;
+    }
+
+    .second-nav li {
+        margin: 10px 0;
+    }
+
+    .recommendation-searchcontainer {
+        flex-direction: column;
+    }
+
+    .recommendation-search {
+        margin-bottom: 10px;
+    }
+
+    .recommendation-filter {
+        justify-content: space-between;
+    }
+
+    .house-filter {
+        flex: 1;
+    }
+
+    .recommendation-secondcontainer {
+        grid-template-columns: 1fr;
+    }
 }
