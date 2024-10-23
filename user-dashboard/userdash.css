@@ -30,10 +30,10 @@ ul {
 
 
 body {
-	font-family: Arial, sans-serif;
+	font-family: Poppins, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
-	background-color: var(--gray);
+	background-color: #f2fff3;
 	color: var(--dark-gray);
 }
 
@@ -42,6 +42,7 @@ body {
 	margin: 0 auto;
 	padding: 20px;
 	margin-top: 40px;
+    background: url(./first-background.png);
 }
 
 /* NAV BAR */
@@ -131,7 +132,6 @@ margin: 0 10px;
 
 .reg:hover, .login:hover {
     /* background-color: #11d184; */
-   
     color: #00985B;
 }
 
@@ -481,6 +481,16 @@ margin: 50px 0;
 @media screen and (max-width: 768px) {
     .toggle-button {
         display: flex;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .recommendation-searchcontaiiner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .second-nav {
