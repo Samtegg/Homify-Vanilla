@@ -1,23 +1,73 @@
-document.getElementById('registerForm').addEventListener('submit', function(e) {
-	e.preventDefault();
-	const name = document.getElementById('name').value;
-	const email = document.getElementById('email').value;
-	const password = document.getElementById('password').value;
-	const role = document.getElementById('role').value;
+const serverUrl = 'http://localhost:3000'
 
-	// Here you would typically send this data to your server
-	console.log('Registration data:', { name, email, password, role });
+const registerForm = document.getElementById('registerForm')
+if(registerForm){
+	registerForm.addEventListener('submit', async function(e) {
+		e.preventDefault();
+		const name = document.getElementById('name').value;
+		const email = document.getElementById('email').value;
+		const phone = document.getElementById('phone').value;
+		const password = document.getElementById('password').value;
+		const confirmPassword = document.getElementById('confirmPassword').value;
+		const role = document.getElementById('role').value;
+		const registerBtn = document.getElementById('register-btn');
+	
+		if(name !== '' && email !== '' && password !== '' && confirmPassword !== ''  && phone !== ''){
+			if (password === confirmPassword) {
+				try {
+					registerBtn.disable = true;
+					registerBtn.innerHTML = 'Loading...'
+					const newData = {
+						name: name,
+						email: email,
+						phone: phone,
+						password: password,
+						role: role,
+						
+					};
+					const response = await fetch(serverUrl+'/api/register', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify(newData)
+					})
+					const data = await response.json();
+		
+					if(!response.ok){
+						throw new Error (`HTTP error! Status: ${response.status}`)
+					}
+	
+					if(data.message == 'Email exist'){
+						registerBtn.disable = false;
+						registerBtn.innerHTML = 'Register'
+						swal('Error', 'Email Already exist', 'error');
+					}
+					if(data.message == 'Success'){
+						registerBtn.disable = false;
+						registerBtn.innerHTML = 'Register';
+						registerForm.reset();
+						swal('Success', 'Success', 'success');
+					}
+					
+				} catch (error) {
+					registerBtn.disable = false;
+					registerBtn.innerHTML = 'Register'
+					console.error(error);
+					registerForm.reset();
+					swal('Error', error.message, 'error');
+				}
+			} else {
+				swal('Error', 'Your password and confirm password are not the same', 'error');
+			}
 
-	// Simulate successful registration
-	alert('Registration successful! Redirecting to dashboard...');
-	window.location.href = '../user-dashboard/userdash.html';
-  });
+		} else{
+			swal('Error', 'Please fill all the inputs', 'error');
+		}
+	
+		
+	  });
+}
 
-  // Social login buttons (these would need to be connected to the respective APIs)
-  document.querySelector('.google-btn').addEventListener('click', function() {
-	alert('Google registration clicked. Implement Google OAuth here.');
-  });
 
-  document.querySelector('.facebook-btn').addEventListener('click', function() {
-	alert('Facebook registration clicked. Implement Facebook OAuth here.');
-  });
+ 

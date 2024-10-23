@@ -1,26 +1,63 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const signinForm = document.getElementById('signinForm');
-  const forgotPasswordLink = document.getElementById('forgotPassword');
+const serverUrl = 'http://localhost:3000'
 
-  signinForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+const signinForm = document.getElementById('signinForm')
+if(signinForm){
+	signinForm.addEventListener('submit', async function(e) {
+		e.preventDefault();
+		const email = document.getElementById('email').value;
+		const password = document.getElementById('password').value;
+		const registerBtn = document.getElementById('sign-in');
+	
+		if(name !== '' && email !== '' && password !== '' && confirmPassword !== ''  && phone !== ''){
+			if (password === confirmPassword) {
+				try {
+					registerBtn.disable = true;
+					registerBtn.innerHTML = 'Loading...'
+					const newData = {
 
-    // Here you would typically send this data to your server for authentication
-    console.log('Sign in data:', { email, password });
+						email: email,
+						password: password
+						
+					};
+					const response = await fetch(serverUrl+'/api/signin', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify(newData)
+					})
+					const data = await response.json();
+		
+					if(!response.ok){
+						throw new Error (`HTTP error! Status: ${response.status}`)
+					}
+	
+					
+					if(data.message == 'Success'){
+						registerBtn.disable = false;
+						registerBtn.innerHTML = 'Sign In';
+						registerForm.reset();
+						swal('Success', 'Success', 'success');
+					}
+					
+				} catch (error) {
+					registerBtn.disable = false;
+					registerBtn.innerHTML = 'Sign In'
+					console.error(error);
+					registerForm.reset();
+					swal('Error', error.message, 'error');
+				}
+			} else {
+				swal('Error', 'Your password and confirm password are not the same', 'error');
+			}
 
-    // Simulate successful sign in
-    alert('Sign in successful! Redirecting to dashboard...');
-    window.location.href = 'dashboard.html';
-  });
+		} else{
+			swal('Error', 'Please fill all the inputs', 'error');
+		}
+	
+		
+	  });
+}
 
-  forgotPasswordLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    const email = prompt("Please enter your email address:");
-    if (email) {
-      // Here you would typically send a password reset email
-      alert(`Password reset link sent to ${email}`);
-    }
-  });
-});
+
+ 

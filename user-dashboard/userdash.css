@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
 	--primary-green: #4CAF50;
 	--light-green: #8BC34A;
@@ -79,6 +82,16 @@ body {
 
 .second-nav{
 	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+ .second-nav > li  {
+    font-family: Poppins;
+font-size: 16px;
+font-weight: 700;
+line-height: 24px;
+text-align: left;
+margin: 0 10px;
 }
 
 
@@ -95,10 +108,7 @@ body {
 	margin: 0 10px;
 }
 
-.dash-anchor:hover{
-    color: #0ee68f;
-    transform: translateY(-2px);
-}
+
 
 .reg {
     background-color: transparent;
@@ -121,7 +131,7 @@ body {
 
 .reg:hover, .login:hover {
     /* background-color: #11d184; */
-    background-color: #f2fff3;
+   
     color: #00985B;
 }
 
@@ -260,4 +270,196 @@ h1, h2 {
 .notifications li:hover {
 	background-color: var(--hover-gray);
 	color: var(--dark-gray);
+}
+
+.account-img{
+	width: auto;
+	height: 15px;
+}
+
+/* Recommendation */
+
+.homify-recommendation{
+    display: flex;
+    flex-direction: column; 
+    background-color: #F3FFF4;
+}
+
+.recommendation-container {
+    display: flex;
+    flex-direction: column; 
+    margin-top: 40px;
+}
+.recommendation-container > h2{
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 72px;
+    text-align: center;
+    color: #048853;
+}
+
+.recommendation-searchcontaiiner {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px 30px;
+}
+.recommendation-search {
+    display: flex;
+    width: 400px;
+}
+.recommendation-search > input {
+    width: 100%;
+    height: 20px;
+    padding: 15px 10px;
+    border: 1px solid #434242;
+}
+.recommendation-search > button { 
+    background-color: #00985B;
+    /* color: #FFFFFF; */
+    height: 33px;
+    border: 0;
+    border: 1px solid #434242;
+    border-radius: 0 2px 2px 0;
+    width: 60px;
+}
+
+.recommendation-filter {
+    display: flex;
+    gap: 15px;
+}
+.house-filter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #FFFFFFCC;
+    margin-bottom: 90px;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.house-filter > img {
+    width: auto;
+    height: 20px;
+}
+.house-filter > p {
+    font-family: Poppins;
+font-size: 18px;
+font-weight: 400;
+line-height: 27px;
+text-align: center;
+color: #00985B;
+}
+.house-filter:hover {
+    background-color: #00985B;
+    color: #FFFFFF;
+    /* background-color: rgba(0, 152, 91, 0.2); * A very faint green *
+    color: #FFFFFF; */
+}
+.house-filter:hover > p {
+    color: #FFFFFF;
+}
+
+.recommendation-secondcontainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #F3FFF4;
+    row-gap: 35px;
+}
+
+.recommendation-card {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
+    justify-self: center;
+    padding: 15px;
+}
+.recommendation-card:hover {
+    background: linear-gradient(150.86deg, #00985B -2.67%, #00985B 56.48%, #000000 113.25%);
+    color: #fff;
+    transform: scale(1.1);
+}
+.recommendation-card > img {
+    width: 351.16px;
+    height: 280px;  
+}
+.recommendation-carddetails{
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 19px;
+}
+.recommendation-carddetails > h4{
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    color: #000;
+}
+.recommendation-carddetails > p{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #000;
+}
+
+.inner-carddetails{
+    display: flex;
+    gap: 30px;
+}
+.innerdetails-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.innerdetails-content > p{
+    font-family: Poppins;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+text-align: center;
+color: #000;
+}
+
+.innerdetails-image {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px; 
+}
+.innerdetails-image > img {
+    width: 15px;
+    height: 15px;
+}
+.innerdetails-image > p{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: center;
+    color: #000;
+}
+
+.loadmore {
+    display: flex;
+    justify-content: center;
+}
+.loadmore > p {
+    font-family: Poppins;
+font-size: 18px;
+font-weight: 400;
+line-height: 27px;
+text-align: center;
+color: #000;
+margin: 50px 0;
+}
+.loadmore > p:hover {
+    color: #00985B;
+    cursor: pointer;
 }
