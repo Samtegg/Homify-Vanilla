@@ -1,4 +1,4 @@
- // Sample data - In a real application, this would come from a backend API
+ // Sample data - this would come from the backend API
  const user = {
 	name: "John Doe",
 	email: "johndoe@example.com",
@@ -123,24 +123,23 @@ topListings.forEach(listing => {
 });
 
 function logout() {
-	// Implement logout functionality here
+	// Implements logout functionality here
 	alert('Logging out...');
 	window.location.href = '../index.html';
 }
 
 function uploadProperty() {
-	// Implement property upload functionality here
+	// Implements property upload functionality here
 	alert('Uploading new property...');
 }
 
 function changeProfilePicture() {
-	// Implement profile picture change functionality here
+	// Implements profile picture change functionality here
 	alert('Changing profile picture...');
 }
 
 function editProperty(propertyId) {
-	// Implement property edit functionality here
+	// Implements property edit functionality here
 	alert(`Editing property with ID: ${propertyId}`);
-	// In a real application, this function would open a modal or navigate to an edit page
-	// where the user can modify the property details and image
+	// this function would open a modal or navigate to an edit page (where the user can modify the property details and image)
 }

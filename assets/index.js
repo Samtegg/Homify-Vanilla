@@ -147,12 +147,12 @@ toggleButton.addEventListener('click', () => {
 
     houseTypeDropdown.addEventListener('change', function() {
         console.log(`Filtered by house type: ${this.value}`);
-        // Implement actual filtering logic here
+        // Implement actual filtering logic
     });
 
     priceRangeDropdown.addEventListener('change', function() {
         console.log(`Filtered by price range: ${this.value}`);
-        // Implement actual filtering logic here
+        // Implement actual filtering logic
     });
 
     // Button pop effect

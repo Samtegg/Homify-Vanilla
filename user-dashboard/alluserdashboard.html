@@ -6,38 +6,274 @@
     <title>Homify User Dashboard | Find Your Dream Home in Lagos</title>
     <meta name="description" content="Manage your Homify account, list properties, view transactions, and stay updated with the latest real estate opportunities in Lagos, Nigeria.">
     <link rel="stylesheet" href="./userdash.css">
-   
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        :root {
+            --primary-green: #4CAF50;
+            --light-green: #8BC34A;
+            --dark-green: #45a049;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --dark-gray: #333333;
+            --hover-gray: #E0E0E0;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        
+        body {
+            font-family: Poppins, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2fff3;
+            color: var(--dark-gray);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .homify-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: linear-gradient(112.9deg, #048853 0.98%, rgba(0, 0, 0, 0.84) 165.36%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .logo{
+            height: 47px;
+            width: auto;
+        }
+        
+        
+        .second-nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+         .second-nav > li  {
+            font-family: Poppins;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+        margin: 0 10px;
+        }
+        
+        
+        .dash-anchor  {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            transition: color 0.3s, transform 0.3s;
+            font-family: Poppins;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            text-align: left;
+            margin: 0 10px;
+        }
+        
+        
+        
+        .reg {
+            background-color: transparent;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 2px;
+            font-family: Poppins;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            text-align: left;
+            margin: 0 10px;
+        }
+        .login {
+            background-color: #fff;
+            color: #00985B;
+            padding: 5px 10px;
+            border-radius: 2px;
+        }
+        
+        .reg:hover, .login:hover {
+            /* background-color: #11d184; */
+            color: #00985B;
+        }
+
+        .account-img {
+            width: auto;
+            height: 20px;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .user-overview, .notification-bar, .dashboard-section {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .user-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .change-picture-btn, .logout-btn, .upload-btn {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .change-picture-btn:hover, .logout-btn:hover, .upload-btn:hover {
+            background-color: var(--dark-green);
+        }
+
+        .notifications, .property-list, .transaction-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .notifications li, .property-list li, .transaction-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .property-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .property-image {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 4px;
+        }
+
+        .property-details {
+            flex-grow: 1;
+        }
+
+        .property-actions {
+            margin-top: 10px;
+        }
+
+        .edit-btn {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .user-info, .user-details {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .profile-picture {
+                margin-bottom: 20px;
+            }
+
+            .logout-btn {
+                margin-top: 20px;
+            }
+
+            .property-item {
+                flex-direction: column;
+            }
+
+            .property-image {
+                width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
-<style>
-
-</style>
-
 <body>
     <header>
-        <!-- Nav Bar -->
         <nav class="homify-nav" id="nav-bar">
             <a href="/index.html"><img class="logo" src="../assets/logo.png" alt="Homify Logo" ></a>
+
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
            
             <ul class="second-nav">
-                <li class="reg"><a class="dash-anchor" href="./register/register.html">MY PROPERTIES</a></li>
-                <li class="reg"><a class="dash-anchor" href="./register/register.html"><img src="../assets/login-icon.png" alt="" class="account-img"></a></li>
-                <li class="reg"><a class="dash-anchor" href="./register/register.html"><img src="../assets/active.png" alt="" class="account-img"></a></li>
+                <li class="reg"><a class="dash-anchor" href="./myproperties.html">MY PROPERTIES</a></li>
+                <li class="reg"><a class="dash-anchor" href="./toplistings.html">TOP LISTINGS</a></li>
+                <li class="reg"><a class="dash-anchor" href="./myprofile.html"><img src="../assets/login-icon.png" alt="" class="account-img"></a></li>
+                <li class="reg"><a class="dash-anchor" href="./notification.html"><img src="../assets/active.png" alt="" class="account-img"></a></li>
                 <li class="login"><a class="login" href="../index.html" >LOGOUT</a></li>
             </ul>
-
-           
-        </nav>  
+        </nav> 
     </header>
 
     <main class="container">
         <section class="user-overview">
             <div class="user-info">
                 <div class="user-details">
-                    <img id="profile-picture" src="/placeholder-user.jpg" alt="Profile Picture" class="profile-picture">
+                    <img id="profile-picture" src="/assets/human-img2.jpg" alt="Profile Picture" class="profile-picture">
                     <div>
-                        <h2 id="username">John Doe</h2>
-                        <p id="email">johndoe@example.com</p>
+                        <h2 id="username">User</h2>
+                        <p id="email">User@email.com</p>
                         <p>Joined: <span id="date-joined">January 1, 2023</span></p>
                         <p>User Type: <span id="user-type">Seller (Land Owner)</span></p>
                         <button class="change-picture-btn" onclick="changeProfilePicture()">Change Profile Picture</button>
@@ -77,8 +313,151 @@
         </section>
     </main>
 
-    <script src="./userdash.js">
-       
+    <script>
+        // Sample data - In a real application, this would come from a backend API
+        const user = {
+            name: "John Doe",
+            email: "johndoe@example.com",
+            dateJoined: "January 1, 2023",
+            userType: "Seller (Land Owner)",
+            profilePicture: "/placeholder.svg?height=100&width=100"
+        };
+
+        const properties = [
+            { 
+                id: 1, 
+                name: "3 Bedroom Flat", 
+                location: "Lekki Phase 1", 
+                type: "Apartment", 
+                price: "₦50,000,000", 
+                image: "/placeholder.svg?height=100&width=150",
+                description: "Excellent road connectivity, 24/7 electricity supply, gated community with top-notch security."
+            },
+            { 
+                id: 2, 
+                name: "2 Bedroom Bungalow", 
+                location: "Ajah", 
+                type: "House", 
+                price: "₦35,000,000", 
+                image: "/placeholder.svg?height=100&width=150",
+                description: "Newly paved roads, stable power supply, close to shopping centers, serene environment."
+            }
+        ];
+
+        const transactions = [
+            { id: 1, type: "Sale", property: "3 Bedroom Flat", date: "March 15, 2023", amount: "₦50,000,000" },
+            { id: 2, type: "Listing", property: "2 Bedroom Bungalow", date: "April 2, 2023", amount: "N/A" }
+        ];
+
+        const topListings = [
+            { 
+                id: 3, 
+                name: "Luxury 5 Bedroom Duplex", 
+                location: "Banana Island", 
+                type: "House", 
+                price: "₦500,000,000", 
+                image: "/placeholder.svg?height=100&width=150",
+                description: "Private access road, uninterrupted power supply, 24/7 security, proximity to high-end amenities."
+            },
+            { 
+                id: 4, 
+                name: "Studio Apartment", 
+                location: "Victoria Island", 
+                type: "Apartment", 
+                price: "₦25,000,000", 
+                image: "/placeholder.svg?height=100&width=150",
+                description: "Central location, good road network, constant electricity, modern security systems in place."
+            }
+        ];
+
+        const notifications = [
+            "New Listing Alert: Luxury 3-bedroom apartment in Lekki Phase 1 just added!",
+            "Your property '2 Bedroom Bungalow' has received 5 new inquiries.",
+            "Reminder: Complete your profile to increase visibility of your listings."
+        ];
+
+        // Populate user information
+        document.getElementById('username').textContent = user.name;
+        document.getElementById('email').textContent = user.email;
+        document.getElementById('date-joined').textContent = user.dateJoined;
+        document.getElementById('user-type').textContent = user.userType;
+        document.getElementById('profile-picture').src = user.profilePicture;
+
+        // Populate notifications
+        const notificationsList = document.getElementById('notifications');
+        notifications.forEach(notification => {
+            const li = document.createElement('li');
+            li.textContent = notification;
+            notificationsList.appendChild(li);
+        });
+
+        // Populate property list
+        const propertyList = document.getElementById('property-list');
+        properties.forEach(property => {
+            const li = document.createElement('li');
+            li.className = 'property-item';
+            li.innerHTML = `
+                <img src="${property.image}" alt="${property.name}" class="property-image">
+                <div class="property-details">
+                    <h3>${property.name}</h3>
+                    <p>Location: ${property.location}</p>
+                    <p>Type: ${property.type}</p>
+                    <p>Price: ${property.price}</p>
+                    <p class="property-description">${property.description}</p>
+                    <div class="property-actions">
+                        <button class="edit-btn" onclick="editProperty(${property.id})">Edit Property</button>
+                    </div>
+                </div>
+            `;
+            propertyList.appendChild(li);
+        });
+
+        // Populate transaction list
+        const transactionList = document.getElementById('transaction-list');
+        transactions.forEach(transaction => {
+            const li = document.createElement('li');
+            li.textContent = `${transaction.type} - ${transaction.property} - ${transaction.date} - ${transaction.amount}`;
+            transactionList.appendChild(li);
+        });
+
+        // Populate top listings
+        const topListingsList = document.getElementById('top-listings');
+        topListings.forEach(listing => {
+            const li = document.createElement('li');
+            li.className = 'property-item';
+            li.innerHTML = `
+                <img src="${listing.image}" alt="${listing.name}" class="property-image">
+                <div class="property-details">
+                    <h3>${listing.name}</h3>
+                    <p>Location: ${listing.location}</p>
+                    <p>Type: ${listing.type}</p>
+                    <p>Price: ${listing.price}</p>
+                    <p class="property-description">${listing.description}</p>
+                </div>
+            `;
+            topListingsList.appendChild(li);
+        });
+
+        function logout() {
+            // Implement logout functionality here
+            alert('Logging out...');
+            window.location.href = '../index.html';
+        }
+
+        function uploadProperty() {
+            // Implement property upload functionality here
+            alert('Uploading new property...');
+        }
+
+        function changeProfilePicture() {
+            // Implement profile picture change functionality here
+            alert('Changing profile picture...');
+        }
+
+        function editProperty(propertyId) {
+            // Implement property edit functionality here
+            alert(`Editing property with ID: ${propertyId}`);
+        }
     </script>
 </body>
 </html>
