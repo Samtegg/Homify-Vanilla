@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homify User Dashboard | Find Your Dream Home in Lagos</title>
+    <meta name="description" content="Manage your Homify account, list properties, view transactions, and stay updated with the latest real estate opportunities in Lagos, Nigeria.">
+    <link rel="stylesheet" href="./userdash.css">
+   
+
+</head>
+<style>
+
+</style>
+
+<body>
+    <header>
+        <!-- Nav Bar -->
+        <nav class="homify-nav" id="nav-bar">
+            <a href="./userdash.html"><img class="logo" src="../assets/logo.png" alt="Homify Logo" ></a>
+           
+            <ul class="second-nav">
+                <li class="reg"><a class="dash-anchor" href="./myproperties.html">MY PROPERTIES</a></li>
+                <li class="reg"><a class="dash-anchor" href="./toplistings.html">TOP LISTINGS</a></li>
+                <li class="reg"><a class="dash-anchor" href="./myprofile.html"><img src="../assets/login-icon.png" alt="" class="account-img"></a></li>
+                <li class="reg"><a class="dash-anchor" href="./notification.html"><img src="../assets/active.png" alt="" class="account-img"></a></li>
+                <li class="login"><a class="login" href="../index.html" >LOGOUT</a></li>
+            </ul>
+
+           
+        </nav>  
+    </header>
+
+    <main class="container">
+
+        <section id="seller-section" class="dashboard-section margin-top">
+            <h2>My Properties</h2>
+            <button class="upload-btn" onclick="uploadProperty()">Upload New Property</button>
+            <ul class="property-list" id="property-list">
+                <!-- Property list will be populated by JavaScript -->
+            </ul>
+        </section>
+
+
+      
+    </main>
+
+    <script src="./userdash.js">
+    </script>
+
+    <script>
+        const properties = [
+	{ 
+		id: 1, 
+		name: "3 Bedroom Flat", 
+		location: "Lekki Phase 1", 
+		type: "Apartment", 
+		price: "₦50,000,000", 
+		image: "/property-1.jpg",
+		description: "Excellent road connectivity, 24/7 electricity supply, gated community with top-notch security."
+	},
+	{ 
+		id: 2, 
+		name: "2 Bedroom Bungalow", 
+		location: "Ajah", 
+		type: "House", 
+		price: "₦35,000,000", 
+		image: "/property-2.jpg",
+		description: "Newly paved roads, stable power supply, close to shopping centers, serene environment."
+	}
+];
+
+const transactions = [
+	{ id: 1, type: "Sale", property: "3 Bedroom Flat", date: "March 15, 2023", amount: "₦50,000,000" },
+	{ id: 2, type: "Listing", property: "2 Bedroom Bungalow", date: "April 2, 2023", amount: "N/A" }
+];
+
+const topListings = [
+	{ 
+		id: 3, 
+		name: "Luxury 5 Bedroom Duplex", 
+		location: "Banana Island", 
+		type: "House", 
+		price: "₦500,000,000", 
+		image: "/property-3.jpg",
+		description: "Private access road, uninterrupted power supply, 24/7 security, proximity to high-end amenities."
+	},
+	{ 
+		id: 4, 
+		name: "Studio Apartment", 
+		location: "Victoria Island", 
+		type: "Apartment", 
+		price: "₦25,000,000", 
+		image: "/property-4.jpg",
+		description: "Central location, good road network, constant electricity, modern security systems in place."
+	}
+];
+
+
+
+
+
+// Populate property list
+const propertyList = document.getElementById('property-list');
+properties.forEach(property => {
+	const li = document.createElement('li');
+	li.className = 'property-item';
+	li.innerHTML = `
+		<img src="${property.image}" alt="${property.name}" class="property-image">
+		<div class="property-details">
+			<h3>${property.name}</h3>
+			<p>Location: ${property.location}</p>
+			<p>Type: ${property.type}</p>
+			<p>Price: ${property.price}</p>
+			<p class="property-description">${property.description}</p>
+			<div class="property-actions">
+				<button class="edit-btn" onclick="editProperty(${property.id})">Edit Property</button>
+			</div>
+		</div>
+	`;
+	propertyList.appendChild(li);
+});
+
+
+    </script>
+</body>
+</html>

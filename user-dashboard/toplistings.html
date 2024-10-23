@@ -31,32 +31,56 @@
         </nav>  
     </header>
 
-    <main class="container ">
-        <section class="user-overview margin-top2">
-            <div class="user-info">
-                <div class="user-details">
-                    <img id="profile-picture" src="/placeholder-user.jpg" alt="Profile Picture" class="profile-picture">
-                    <div>
-                        <h2 id="username">John Doe</h2>
-                        <p id="email">johndoe@example.com</p>
-                        <p>Joined: <span id="date-joined">January 1, 2023</span></p>
-                        <p>User Type: <span id="user-type">Seller (Land Owner)</span></p>
-                        <button class="change-picture-btn" onclick="changeProfilePicture()">Change Profile Picture</button>
-                    </div>
-                </div>
-                <button class="logout-btn" onclick="logout()">Sign Out</button>
-            </div>
+    <main class="container">
+        <section class="dashboard-section margin-top">
+            <h2>Top Listings</h2>
+            <ul class="property-list" id="top-listings">
+                <!-- Top listings will be populated by JavaScript -->
+            </ul>
         </section>
-
-
-
-
-
-
     </main>
 
     <script src="./userdash.js">
        
+    </script>
+
+    <script>
+        const topListings = [
+	{ 
+		id: 3, 
+		name: "Luxury 5 Bedroom Duplex", 
+		location: "Banana Island", 
+		type: "House", 
+		price: "₦500,000,000", 
+		image: "/property-3.jpg",
+		description: "Private access road, uninterrupted power supply, 24/7 security, proximity to high-end amenities."
+	},
+	{ 
+		id: 4, 
+		name: "Studio Apartment", 
+		location: "Victoria Island", 
+		type: "Apartment", 
+		price: "₦25,000,000", 
+		image: "/property-4.jpg",
+		description: "Central location, good road network, constant electricity, modern security systems in place."
+	}
+];
+        const topListingsList = document.getElementById('top-listings');
+topListings.forEach(listing => {
+	const li = document.createElement('li');
+	li.className = 'property-item';
+	li.innerHTML = `
+		<img src="${listing.image}" alt="${listing.name}" class="property-image">
+		<div class="property-details">
+			<h3>${listing.name}</h3>
+			<p>Location: ${listing.location}</p>
+			<p>Type: ${listing.type}</p>
+			<p>Price: ${listing.price}</p>
+			<p class="property-description">${listing.description}</p>
+		</div>
+	`;
+	topListingsList.appendChild(li);
+});
     </script>
 </body>
 </html>

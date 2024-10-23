@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homify User Dashboard | Find Your Dream Home in Lagos</title>
+    <meta name="description" content="Manage your Homify account, list properties, view transactions, and stay updated with the latest real estate opportunities in Lagos, Nigeria.">
+    <link rel="stylesheet" href="./userdash.css">
+   
+
+</head>
+<style>
+
+</style>
+
+<body>
+    <header>
+        <!-- Nav Bar -->
+        <nav class="homify-nav" id="nav-bar">
+            <a href="./userdash.html"><img class="logo" src="../assets/logo.png" alt="Homify Logo" ></a>
+           
+            <ul class="second-nav">
+                <li class="reg"><a class="dash-anchor" href="./myproperties.html">MY PROPERTIES</a></li>
+                <li class="reg"><a class="dash-anchor" href="./toplistings.html">TOP LISTINGS</a></li>
+                <li class="reg"><a class="dash-anchor" href="./myprofile.html"><img src="../assets/login-icon.png" alt="" class="account-img"></a></li>
+                <li class="reg"><a class="dash-anchor" href="./notification.html"><img src="../assets/active.png" alt="" class="account-img"></a></li>
+                <li class="login"><a class="login" href="../index.html" >LOGOUT</a></li>
+            </ul>
+
+           
+        </nav>  
+    </header>
+
+    <main class="container">
+        
+
+        <section class="notification-bar margin-top">
+            <h3>Notifications</h3>
+            <ul class="notifications" id="notifications">
+                <!-- Notifications will be populated by JavaScript -->
+            </ul>
+        </section>
+
+      
+
+        <section class="dashboard-section">
+            <h2>Transaction History</h2>
+            <ul class="transaction-list" id="transaction-list">
+                <!-- Transaction list will be populated by JavaScript -->
+            </ul>
+        </section>
+
+       
+    </main>
+
+    <script src="./userdash.js">
+       
+    </script>
+    <script>
+
+const notifications = [
+	"New Listing Alert: Luxury 3-bedroom apartment in Lekki Phase 1 just added!",
+	"Your property '2 Bedroom Bungalow' has received 5 new inquiries.",
+	"Reminder: Complete your profile to increase visibility of your listings."
+];
+    
+    const notificationsList = document.getElementById('notifications');
+        notifications.forEach(notification => {
+            const li = document.createElement('li');
+            li.textContent = notification;
+            notificationsList.appendChild(li);
+        });
+
+        const transactions = [
+	{ id: 1, type: "Sale", property: "3 Bedroom Flat", date: "March 15, 2023", amount: "₦50,000,000" },
+	{ id: 2, type: "Listing", property: "2 Bedroom Bungalow", date: "April 2, 2023", amount: "N/A" }
+];
+
+const transactionList = document.getElementById('transaction-list');
+transactions.forEach(transaction => {
+	const li = document.createElement('li');
+	li.textContent = `${transaction.type} - ${transaction.property} - ${transaction.date} - ${transaction.amount}`;
+	transactionList.appendChild(li);
+});
+
+        
+        
+        </script>
+</body>
+</html>
